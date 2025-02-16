@@ -1,0 +1,5 @@
+- Create token util file to create and verify a token - DONE
+
+- Add register and login routes for user - DONE
+
+- Add authenticated middleware to verify the user is logged in - DONE
