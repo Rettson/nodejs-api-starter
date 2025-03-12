@@ -12,8 +12,6 @@ export default async function authenticated(req, res, next) {
 
     const verified = token.verify(access_token);
 
-    console.log(verified);
-
     if (!verified) {
         return res.status(401).json({ error: 'Unauthorised' });
     }
@@ -23,7 +21,6 @@ export default async function authenticated(req, res, next) {
         args: [verified.id]
     });
 
-    console.log(result);
     if (result.rows.length <= 0) {
         return res.status(401).json({ error: 'Unauthorised' });
     }
