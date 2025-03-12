@@ -28,7 +28,10 @@ export default async function authenticated(req, res, next) {
         return res.status(401).json({ error: 'Unauthorised' });
     }
 
-    req.user = result.rows[0];
+    const user = result.rows[0];
+    delete user['password'];
 
+    req.user = user;
+    
     next();
 }

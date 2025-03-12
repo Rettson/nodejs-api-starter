@@ -45,4 +45,8 @@ async function login(req, res, next) {
     return res.status(200).json({ token: jwt });
 }
 
-export default { register, login };
+async function user(req, res) {
+    return res.status(200).json({ user: req.user });
+}
+
+export default { register, login, user };
